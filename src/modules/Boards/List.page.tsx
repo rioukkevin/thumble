@@ -1,4 +1,4 @@
-import { Card, Image, Main } from "grommet";
+import { Main } from "grommet";
 import { FC } from "react";
 import { BoardThumbnail } from ".";
 import { useBoards } from "../../hooks/trello/useBoards";
