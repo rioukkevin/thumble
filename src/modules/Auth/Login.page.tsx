@@ -1,4 +1,4 @@
-import { Button, Main } from "grommet";
+import { Button, Heading, Image, Main, Markdown } from "grommet";
 import { FC, useEffect } from "react";
 import { useHistory, useLocation } from "react-router";
 import { ROUTES } from "../../router/routes";
@@ -30,6 +30,13 @@ export const Login: FC<IProps> = () => {
 
   return (
     <Main pad="large" justify="center" align="center">
+      <Image src="/logo.png" />
+      <Heading>Thumble</Heading>
+      <Markdown>
+        ## L'application de **suivi** de vos [trello](https://trello.com) sans
+        sauvegarde de vos informations (*Nécessite ScrummerTheodo*)
+      </Markdown>
+      <Markdown>#### **Arrive bientôt dans sa première version**</Markdown>
       <Button
         primary
         label="Connexion avec Trello"
