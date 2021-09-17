@@ -9,8 +9,12 @@ export const useOrganization = (id: string) => {
 
   useEffect(() => {
     const run = async () => {
-      const orga = await trello.organizations.getOrganization({ id });
-      setOrganization(orga);
+      try {
+        const orga = await trello.organizations.getOrganization({ id });
+        setOrganization(orga);
+      } catch (error) {
+        console.log("Whooopsi");
+      }
     };
     run();
   }, [trello, id]);
