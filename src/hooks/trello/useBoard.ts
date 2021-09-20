@@ -9,11 +9,13 @@ export const useBoard = (id: string) => {
 
   useEffect(() => {
     const run = async () => {
-      try {
-        const boa = await trello.boards.getBoard({ id });
-        setBoard(boa);
-      } catch (error) {
-        console.log("Whooopsi");
+      if (trello) {
+        try {
+          const boa = await trello.boards.getBoard({ id });
+          setBoard(boa);
+        } catch (error) {
+          console.log("Whooopsi");
+        }
       }
     };
     run();

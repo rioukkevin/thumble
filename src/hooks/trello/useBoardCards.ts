@@ -9,11 +9,13 @@ export const useBoardCards = (id: string) => {
 
   useEffect(() => {
     const run = async () => {
-      try {
-        const boaL = await trello.cards.getCardBoard({ id });
-        setBoardCards(boaL as Card[]);
-      } catch (error) {
-        console.log("Whooopsi");
+      if (trello) {
+        try {
+          const boaL = await trello.cards.getCardBoard({ id });
+          setBoardCards(boaL as Card[]);
+        } catch (error) {
+          console.log("Whooopsi");
+        }
       }
     };
     run();

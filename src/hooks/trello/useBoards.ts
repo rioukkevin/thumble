@@ -11,7 +11,7 @@ export const useBoards = () => {
 
   useEffect(() => {
     const run = async () => {
-      if (member) {
+      if (member && trello) {
         const bds = await trello.members.getMemberBoards({
           id: member.id ?? "",
         });

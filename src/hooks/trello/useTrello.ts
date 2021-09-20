@@ -3,16 +3,14 @@ import { TrelloClient } from "trello.js";
 import { useAuth } from "../../utils/auth";
 
 export interface IProvide {
-  trello: TrelloClient;
+  trello: TrelloClient | null;
   token: string;
 }
 
 export const useTrello = (): IProvide => {
   const auth = useAuth();
 
-  const [Trello, setTrello] = useState<TrelloClient>(
-    new TrelloClient({ key: "", token: "" })
-  );
+  const [Trello, setTrello] = useState<TrelloClient | null>(null);
 
   useEffect(() => {
     if (auth.token) {
