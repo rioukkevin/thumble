@@ -1,7 +1,6 @@
 import { Main } from "grommet";
 import { FC } from "react";
 import { useParams } from "react-router";
-import { groupBy } from "underscore";
 import { useBoard } from "../../hooks/trello/useBoard";
 import { useBoardCards } from "../../hooks/trello/useBoardCards";
 import { IRouteParams } from "../../router/routes";
