@@ -4,16 +4,18 @@ import { Board } from "trello.js/out/api/models";
 
 export interface IProps {
   board: Board;
+  onClick: () => void;
 }
 
 const CARD_WIDTH = 250;
 const CARD_HEIGHT = 160;
 
 export const Thumbnail: FC<IProps> = (props) => {
-  const { board } = props;
+  const { board, onClick } = props;
 
   //@ts-ignore
   const bgUrl = board.prefs?.backgroundImageScaled[1].url;
+
   return (
     <Card
       background="light-1"
@@ -27,6 +29,7 @@ export const Thumbnail: FC<IProps> = (props) => {
         overflow: "hidden",
         margin: 10,
       }}
+      onClick={onClick}
     >
       <Image
         src={bgUrl}
