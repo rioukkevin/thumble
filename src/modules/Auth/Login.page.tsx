@@ -23,7 +23,6 @@ export const Login: FC<IProps> = () => {
     if (location.hash) {
       const tk = location.hash.replace("#token=", "");
       auth.addToken(tk);
-
       router.replace(ROUTES.private.boards);
     }
   });

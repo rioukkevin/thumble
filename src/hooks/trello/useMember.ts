@@ -9,8 +9,10 @@ export const useMember = (): Member | undefined => {
 
   useEffect(() => {
     const run = async () => {
-      const memberData = await trello.tokens.getTokenMember({ token });
-      setMember(memberData);
+      if (token) {
+        const memberData = await trello.tokens.getTokenMember({ token });
+        setMember(memberData);
+      }
     };
     run();
   }, [trello, token]);
